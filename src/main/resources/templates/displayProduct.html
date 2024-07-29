@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog Form</title>
+
+    <h1 style="text-align:center">Welcome to ABC Products</h1>
+    <style>
+        /* Style for the whole body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* Style for the table */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        /* Style for table headers */
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            padding: 8px;
+        }
+
+        /* Style for table rows */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Style for table cells */
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+<br>
+<h2 style="text-align:center; color:red">Products</h2>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- DISPLAY THE DETAILS -->
+    <tr th:each="b:${ProductEntity}">
+
+        <td th:text="${b.id}"></td>
+        <td th:text="${b.name}"></td>
+        <td th:text="${b.price}"></td>
+        <td th:text="${b.category}"></td>
+    </tr>
+
+    </tbody>
+</table>
+
+</body>
+</html>
